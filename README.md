@@ -7,7 +7,6 @@
 <p align="center">
   <a href="https://tongyi-mai.github.io/MobileWorld/"><img src="https://img.shields.io/badge/Project-Website-blue" alt="Project Website"></a>
   <a href="https://arxiv.org/abs/2512.19432"><img src="https://img.shields.io/badge/arXiv-Paper-red" alt="arXiv Paper"></a>
-  <a href="https://github.com/Tongyi-MAI/MobileWorld"><img src="https://img.shields.io/badge/GitHub-Repo-green" alt="GitHub"></a>
   <a href="#citation"><img src="https://img.shields.io/badge/Cite-BibTeX-orange" alt="Citation"></a>
 </p>
 
