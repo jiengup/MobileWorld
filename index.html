@@ -25,6 +25,7 @@
     </nav>
 
     <main class="container">
+
         <!-- Title Section -->
         <header class="header">
             <h1>Mobile World: Benchmarking Autonomous Mobile Agents in Agent-User Interactive and MCP-Augmented
@@ -56,10 +57,15 @@
 
             <div class="links">
                 <a href="https://arxiv.org/abs/2512.19432" class="link-btn">Paper</a>
+                <a href="https://huggingface.co/datasets/Tongyi-MAI/MobileWorld" class="link-btn">Huggingface</a>
                 <a href="https://github.com/Tongyi-MAI/MobileWorld" class="link-btn">Code</a>
                 <a href="#citation" class="link-btn">Cite</a>
             </div>
         </header>
+        <!-- Animated Banner -->
+        <div class="banner">
+            <img src="assets/banner_animated.gif" alt="Mobile World Agent Trajectories">
+        </div>
 
         <!-- Leaderboard -->
         <section id="leaderboard" class="section">
@@ -219,6 +225,33 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+        </section>
+
+        <!-- Data Statistics -->
+        <section class="section">
+            <h2>Data Statistics</h2>
+
+            <p>We summarize key statistics of Mobile World, highlighting four core dimensions:</p>
+
+            <ol class="stats-list">
+                <li><strong>Diverse domains:</strong> Tasks span communication, productivity, and navigation.
+                    Approximately 95% of tasks involve third-party applications, aligning with authentic mobile usage
+                    patterns and ensuring real-world relevance.</li>
+                <li><strong>Cross-app complexity:</strong> 62.2% of tasks require coordination between multiple apps,
+                    and 12.4% involve three or more.</li>
+                <li><strong>Novel task categories:</strong> Agent-user interaction tasks and MCP-augmented tasks account
+                    for 42.3% of the dataset. These tasks go beyond pure GUI navigation by requiring dynamic user
+                    engagement and external tool use.</li>
+                <li><strong>Rigorous verification:</strong> Multiple verification methods assess task success: 47.3% of
+                    tasks rely on self-hosted database verification, and 36.8% use local storage inspection,
+                    highlighting the importance of apps with fully controlled backends.</li>
+            </ol>
+
+            <div class="stats-figures">
+                <figure class="figure">
+                    <img src="assets/key_stats.png" alt="Task distribution across scenarios">
+                </figure>
             </div>
         </section>
 
