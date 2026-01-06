@@ -252,34 +252,6 @@ For detailed documentation, see the `docs/` directory:
   </tr>
 </table>
 
-MobileWorld comprises **201 tasks** spanning diverse complexity levels and evaluation methodologies:
-
-### Task Categories
-
-- **GUI-Only Tasks** (116, 57.7%): Standard mobile operations through graphical interface
-- **Agent-User Interactive Tasks** (45, 22.4%): Tasks requiring dynamic human-agent collaboration
-- **MCP-Augmented Tasks** (40, 19.9%): Tasks leveraging external tools via Model Context Protocol
-
-### Application Complexity
-
-- **Single-App Tasks** (76, 37.8%): Operations within one application
-- **Two-App Tasks** (100, 49.8%): Cross-application workflows involving two apps
-- **Multi-App Tasks** (25, 12.4%): Complex tasks spanning three or more applications
-
-### Evaluation Methods
-
-Our deterministic evaluation employs four complementary verification approaches:
-- **Database Verification** (95, 47.3%): Backend database state validation
-- **Storage Inspection** (74, 36.8%): Local storage and file system checks
-- **Textual Matching** (22, 10.9%): Pattern-based answer verification
-- **App Callbacks** (10, 5.0%): Custom API-based state capture
-
-### MCP Infrastructure
-
-- **5 MCP Servers** for external tool integration
-- **64 MCP Tools** enabling extended agent capabilities
-
-
 
 ## 📬 Contact
 
