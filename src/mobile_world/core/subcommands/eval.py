@@ -98,7 +98,7 @@ def _add_common_arguments(parser: argparse.ArgumentParser) -> None:
         "--suite-family",
         "--suite_family",
         dest="suite_family",
-        choices=["mobile_world"],
+        choices=["mobile_world", "android_world"],
         default="mobile_world",
         help="Suite family to use (default: mobile_world)",
     )

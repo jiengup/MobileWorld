@@ -15,7 +15,7 @@ def configure_parser(subparsers: argparse._SubParsersAction) -> None:
         "--suite-family",
         "--suite_family",
         dest="suite_family",
-        choices=["mobile_world"],
+        choices=["mobile_world", "android_world"],
         default="mobile_world",
         help="Initial task suite family to use (default: mobile_world). Can be changed dynamically via /suite_family/switch endpoint.",
     )

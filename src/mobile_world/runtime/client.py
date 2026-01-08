@@ -59,7 +59,7 @@ class AndroidEnvClient:
         This will restart the emulator with appropriate AVD and reinitialize task registry.
 
         Args:
-            target_family: Either "mobile_world"
+            target_family: Either "mobile_world" or "android_world"
 
         Returns:
             dict: Response from the suite family switch endpoint
