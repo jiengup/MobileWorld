@@ -180,6 +180,7 @@ This launches 5 containerized Android environments with:
 
 ### 3. Run Evaluation
 
+**MobileWorld Tasks (Default):**
 ```bash
 sudo uv run mw eval \
     --agent_type qwen3vl \
@@ -191,6 +192,24 @@ sudo uv run mw eval \
     --log_file_root traj_logs/qwen3_vl_logs \
     --enable_mcp
 ```
+
+**Android World Tasks:**
+```bash
+sudo uv run mw eval \
+    --agent_type qwen3vl \
+    --task ALL \
+    --suite-family android_world \
+    --max_round 50 \
+    --model_name Qwen3-VL-235B-A22B \
+    --llm_base_url [openai_compatible_url] \
+    --log_file_root traj_logs/android_world_logs
+```
+
+> **Note**: MobileWorld now supports two benchmark suites:
+> - `mobile_world` (default): 201 tasks across 20 applications
+> - `android_world`: Android World benchmark tasks
+> 
+> Use `--suite-family android_world` to run Android World tasks.
 
 ### 4. View Results
 
@@ -241,6 +260,7 @@ For detailed documentation, see the `docs/` directory:
 | [MCP Setup](docs/mcp_setup.md) | Configure MCP servers for external tool integration |
 | [Windows Setup](docs/setup_for_windows.md) | WSL2 and KVM setup instructions for Windows |
 | [AVD Configuration](docs/configure_avd.md) | Customize and save Android Virtual Device snapshots |
+| [Android World Integration](docs/android_world_integration.md) | Android World benchmark suite integration guide |
 
 ---
 

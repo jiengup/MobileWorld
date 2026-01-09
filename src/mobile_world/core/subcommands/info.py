@@ -51,7 +51,7 @@ def configure_parser(subparsers: argparse._SubParsersAction) -> None:
         "--suite-family",
         "--suite_family",
         dest="suite_family",
-        choices=["mobile_world"],
+        choices=["mobile_world", "android_world"],
         default="mobile_world",
         help="Suite family to show tasks from (default: mobile_world)",
     )
@@ -97,7 +97,7 @@ def configure_parser(subparsers: argparse._SubParsersAction) -> None:
         "--suite-family",
         "--suite_family",
         dest="suite_family",
-        choices=["mobile_world"],
+        choices=["mobile_world", "android_world"],
         default="mobile_world",
         help="Suite family to show apps from (default: mobile_world)",
     )

@@ -48,6 +48,7 @@ SUITE_FAMILY: str = "mobile_world"
 RUNNING_TASK = None
 AVD_MAPPING: dict[str, str] = {
     "mobile_world": "Pixel_8_API_34_x86_64",
+    "android_world": "Pixel_8_API_34_x86_64",  # Use the same AVD for android_world
 }
 
 
@@ -55,15 +56,15 @@ def initialize_suite_family(suite_family: str) -> None:
     """Initialize the suite family and task registry.
 
     Args:
-        suite_family: Either "mobile_world"
+        suite_family: Either "mobile_world" or "android_world"
     """
     global SUITE_FAMILY, task_registry
 
     SUITE_FAMILY = suite_family
     logger.info(f"Initializing suite_family: {suite_family}")
 
-    task_registry = TaskRegistry()
-    logger.info(f"Loaded {len(task_registry.tasks)} mobile_world tasks")
+    task_registry = TaskRegistry(suite_family=suite_family)
+    logger.info(f"Loaded {len(task_registry.tasks)} {suite_family} tasks")
 
 
 CONTROLLERS: dict[str, AndroidController] = {}
@@ -625,10 +626,10 @@ def switch_suite_family(target_family: str = Query(..., description="Target suit
     logger.info(f"[SUITE_FAMILY_SWITCH] Switching from {SUITE_FAMILY} to {target_family}")
 
     # Validate target family
-    if target_family not in ["mobile_world"]:
+    if target_family not in ["mobile_world", "android_world"]:
         raise HTTPException(
             status_code=400,
-            detail=f"Invalid suite_family: {target_family}. Must be 'mobile_world'",
+            detail=f"Invalid suite_family: {target_family}. Must be 'mobile_world' or 'android_world'",
         )
 
     is_healthy = all(ctr.check_health() for ctr in CONTROLLERS.values())

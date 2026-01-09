@@ -11,18 +11,32 @@ import mobile_world
 class TaskRegistry:
     _scan_logged: set[str] = set()
 
-    def __init__(self, task_set_path: str | None = None):
+    def __init__(self, task_set_path: str | None = None, suite_family: str = "mobile_world"):
         """
         Initialize TaskRegistry and automatically scan for tasks.
 
         Args:
             task_set_path: Path to the directory containing task files.
-                          If None, uses the installed mobile_world package path.
+                          If None, uses the path based on suite_family.
+            suite_family: Either "mobile_world" or "android_world".
+                         Used to determine default task directory if task_set_path is None.
         """
         self.tasks: dict[str, object] = {}
+        self.suite_family = suite_family
+        
         if task_set_path is None:
             package_path = Path(mobile_world.__file__).parent
-            self.task_set_path = str(package_path / "tasks" / "definitions")
+            if suite_family == "android_world":
+                # Check if android_world tasks exist in third-party directory
+                third_party_path = package_path.parent.parent / "third-party" / "android_world"
+                if third_party_path.exists():
+                    self.task_set_path = str(third_party_path)
+                else:
+                    # Fallback to definitions/android_world subdirectory
+                    self.task_set_path = str(package_path / "tasks" / "definitions" / "android_world")
+            else:
+                # Default mobile_world path
+                self.task_set_path = str(package_path / "tasks" / "definitions")
         else:
             self.task_set_path = task_set_path
         self._scan_and_register_tasks()

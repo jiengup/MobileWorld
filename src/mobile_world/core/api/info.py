@@ -76,12 +76,12 @@ def get_task_registry(suite_family: str = "mobile_world"):
     """Get the appropriate task registry based on suite_family.
 
     Args:
-        suite_family: "mobile_world"
+        suite_family: "mobile_world" or "android_world"
 
     Returns:
         Task registry instance
     """
-    return TaskRegistry()
+    return TaskRegistry(suite_family=suite_family)
 
 
 def get_task_info(
